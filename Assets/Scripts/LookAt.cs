@@ -18,7 +18,7 @@ public class LookAt : MonoBehaviour {
 	void MoveCamera ()
 	{
 		
-		transform.position = new Vector3 (target.transform.position.x, target.transform.position.y + height, target.transform.position.z + followDistance);
+		transform.position = new Vector3 (target.transform.position.x , target.transform.position.y + height, target.transform.position.z + followDistance);
 	
 			
 	}
