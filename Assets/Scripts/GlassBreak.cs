@@ -15,8 +15,9 @@ public class GlassBreak : MonoBehaviour {
 		if (collision.relativeVelocity.magnitude > breakForce)
 		{
 			Destroy (gameObject);
-			Instantiate (brokenObject, transform.position, transform.rotation);
-			brokenObject.localScale = transform.localScale;
+            brokenObject.localScale = transform.localScale;
+            Instantiate (brokenObject, transform.position, transform.rotation);
+			
 			Vector3 explosionPos = transform.position;
 			Collider[] colliders = Physics.OverlapSphere (explosionPos, explosionRadius); //checks the explosion radius for colliders and adds them to an array
 

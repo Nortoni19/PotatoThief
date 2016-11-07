@@ -52,9 +52,14 @@ public class PotatoController : MonoBehaviour {
             scoreText.text = "$" + score.ToString();
             other.gameObject.SetActive(false);
         }
+        if (other.gameObject.CompareTag("Turkey"))
+        {
+            Debug.Log("zorp");
+            other.transform.GetChild(0).GetComponent<TextMesh>().text = "YEAH BRO! " + "\n" + "LETS ROB THESE" + "\n" + "UNDERWATER DANCERS";
+        }
 
     }
-    	void movePotato () //moves ye old potato
+    	void movePotato () //moves ye old potato0
 	{
 		
 	float moveX = Input.GetAxis ("Horizontal");
@@ -87,7 +92,7 @@ public class PotatoController : MonoBehaviour {
 	bool OnGround ()
 	{
 
-		return Physics.Raycast (transform.position, Vector3.down, GetComponent<MeshCollider>().bounds.extents.y + 0.1f);
+		return Physics.Raycast (transform.position, Vector3.down, GetComponent<MeshCollider>().bounds.extents.y + 0.5f);
 
 	}
 }
